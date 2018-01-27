@@ -13,7 +13,9 @@
         <activity android:name=".OtherActivity" />
         <activity android:name=".FoodActivity" />
         <activity android:name=".ComponentActivity"></activity>
-        <activity android:name=".features.news.NewsActivity">
+        <activity
+            android:name=".features.news.NewsActivity"
+            android:label="News">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
