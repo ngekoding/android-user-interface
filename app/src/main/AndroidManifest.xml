@@ -12,7 +12,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".OtherActivity" />
         <activity android:name=".FoodActivity" />
-        <activity android:name=".ComponentActivity"></activity>
+        <activity android:name=".ComponentActivity" />
         <activity
             android:name=".features.news.NewsActivity"
             android:label="News">
@@ -22,6 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".features.detail.DetailActivity"></activity>
     </application>
 
 </manifest>

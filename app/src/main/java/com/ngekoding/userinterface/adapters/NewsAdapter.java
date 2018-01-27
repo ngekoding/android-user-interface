@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.ngekoding.userinterface.R;
 import com.ngekoding.userinterface.models.News;
+import com.ngekoding.userinterface.utils.OnItemClickListener;
 
 import java.util.List;
 
@@ -21,8 +22,14 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHoder> {
     // News data
     List<News> newsList;
 
+    private OnItemClickListener clickListener;
+
     public NewsAdapter(List<News> newsList) {
         this.newsList = newsList;
+    }
+
+    public void setClickListener(OnItemClickListener clickListener) {
+        this.clickListener = clickListener;
     }
 
     @Override
@@ -59,6 +66,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHoder> {
             title = itemView.findViewById(R.id.news_title);
             date = itemView.findViewById(R.id.news_date);
             image = itemView.findViewById(R.id.news_image);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onItemClick(getAdapterPosition());
+                }
+            });
         }
     }
 }
